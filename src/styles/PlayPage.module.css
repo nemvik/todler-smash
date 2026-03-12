@@ -1,0 +1,132 @@
+.page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+.surface {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--theme-gradient-a), var(--theme-gradient-b));
+  overflow: hidden;
+}
+
+.surface::before,
+.surface::after,
+.surfaceGlow {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.surfaceGlow {
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--theme-glow) 84%, transparent) 0, transparent 18%),
+    radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--theme-accent-2) 50%, transparent) 0, transparent 19%),
+    radial-gradient(circle at 72% 82%, color-mix(in srgb, var(--theme-accent-3) 58%, transparent) 0, transparent 20%);
+  opacity: 0.9;
+}
+
+.clouds::before {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.42) 0 7%, transparent 8%),
+    radial-gradient(circle at 42% 14%, rgba(255, 255, 255, 0.28) 0 6%, transparent 7%),
+    radial-gradient(circle at 76% 26%, rgba(255, 255, 255, 0.24) 0 7%, transparent 8%);
+}
+
+.dots::before {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.36) 1.4px, transparent 1.4px);
+  background-size: 36px 36px;
+  opacity: 0.45;
+}
+
+.waves::before {
+  background:
+    radial-gradient(circle at 25% 125%, rgba(255, 255, 255, 0.25) 0 22%, transparent 23%),
+    radial-gradient(circle at 70% 120%, rgba(255, 255, 255, 0.18) 0 20%, transparent 21%);
+}
+
+.stars::before {
+  background:
+    radial-gradient(circle at 15% 12%, rgba(255, 255, 255, 0.94) 0 2px, transparent 3px),
+    radial-gradient(circle at 31% 28%, rgba(255, 255, 255, 0.72) 0 2px, transparent 3px),
+    radial-gradient(circle at 74% 18%, rgba(255, 255, 255, 0.76) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 36%, rgba(255, 255, 255, 0.78) 0 2px, transparent 3px),
+    radial-gradient(circle at 67% 74%, rgba(255, 255, 255, 0.72) 0 2px, transparent 3px);
+}
+
+.confetti::before {
+  background:
+    linear-gradient(120deg, transparent 0 18%, rgba(255, 255, 255, 0.2) 18% 20%, transparent 20% 100%),
+    linear-gradient(200deg, transparent 0 48%, rgba(255, 255, 255, 0.17) 48% 50%, transparent 50% 100%);
+}
+
+.surface::after {
+  background:
+    radial-gradient(circle at 20% 78%, color-mix(in srgb, var(--theme-accent) 44%, transparent) 0, transparent 22%),
+    radial-gradient(circle at 88% 72%, color-mix(in srgb, var(--theme-accent-2) 44%, transparent) 0, transparent 22%);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.focusProxy {
+  position: absolute;
+  inset: 0;
+  outline: none;
+}
+
+.cornerHotspot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 84px;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  opacity: 0;
+}
+
+.hud {
+  position: absolute;
+  right: clamp(0.7rem, 2vw, 1.2rem);
+  bottom: clamp(0.8rem, 2vw, 1.2rem);
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.hudBadge,
+.hudPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: min(78vw, 28rem);
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 30px rgba(18, 34, 68, 0.12);
+  color: var(--theme-ink);
+  font-size: 0.92rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surfaceGlow,
+  .surface::before,
+  .surface::after {
+    transition: none;
+  }
+}

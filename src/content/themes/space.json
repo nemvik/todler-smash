@@ -1,0 +1,73 @@
+{
+  "id": "space",
+  "name": { "cs": "Vesmír", "en": "Space" },
+  "description": {
+    "cs": "Měsíčky, planety a tiché rakety.",
+    "en": "Moons, planets, and soft rockets."
+  },
+  "icon": "🚀",
+  "palette": {
+    "base": "#1f275d",
+    "baseAlt": "#2f3f90",
+    "surface": "#314294",
+    "surfaceAlt": "#4056bc",
+    "ink": "#f7f8ff",
+    "outline": "#f7f8ff",
+    "accent": "#ffb565",
+    "accent2": "#7ae8ff",
+    "accent3": "#cba7ff",
+    "glow": "#fff0b8",
+    "shadow": "#11163a"
+  },
+  "background": {
+    "style": "stars",
+    "gradient": ["#16204d", "#30418f"],
+    "accentGradient": ["#1f275d", "#6549a8"],
+    "patternOpacity": 0.28
+  },
+  "items": [
+    { "id": "rocket", "type": "asset", "value": "rocket", "label": { "cs": "raketa", "en": "rocket" } },
+    { "id": "moon", "type": "asset", "value": "moon", "label": { "cs": "měsíc", "en": "moon" } },
+    { "id": "star", "type": "asset", "value": "star", "label": { "cs": "hvězda", "en": "star" } },
+    { "id": "planet", "type": "emoji", "value": "🪐", "label": { "cs": "planeta", "en": "planet" } },
+    { "id": "sparkle", "type": "emoji", "value": "✨", "label": { "cs": "třpytka", "en": "sparkle" } },
+    { "id": "milky", "type": "emoji", "value": "🌌", "label": { "cs": "mléčná dráha", "en": "milky way" } },
+    { "id": "star2", "type": "emoji", "value": "🌟", "label": { "cs": "velká hvězda", "en": "big star" } },
+    { "id": "moon-face", "type": "emoji", "value": "🌙", "label": { "cs": "měsíček", "en": "moon crescent" } },
+    { "id": "satellite", "type": "emoji", "value": "🛰️", "label": { "cs": "satelit", "en": "satellite" } },
+    { "id": "ufo", "type": "emoji", "value": "🛸", "label": { "cs": "ufo", "en": "ufo" } },
+    { "id": "sun", "type": "emoji", "value": "☀️", "label": { "cs": "slunce", "en": "sun" } },
+    { "id": "comet", "type": "emoji", "value": "☄️", "label": { "cs": "kometa", "en": "comet" } },
+    { "id": "alien", "type": "emoji", "value": "👽", "label": { "cs": "mimozemšťan", "en": "alien" } },
+    { "id": "robot", "type": "emoji", "value": "🤖", "label": { "cs": "robot", "en": "robot" } },
+    { "id": "earth", "type": "emoji", "value": "🌍", "label": { "cs": "země", "en": "earth" } },
+    { "id": "mars", "type": "emoji", "value": "🔴", "label": { "cs": "rudá planeta", "en": "red planet" } },
+    { "id": "crystal", "type": "emoji", "value": "🔷", "label": { "cs": "krystal", "en": "crystal" } },
+    { "id": "bubble", "type": "asset", "value": "bubble", "label": { "cs": "vesmírná bublina", "en": "space bubble" } },
+    { "id": "bear", "type": "asset", "value": "bear", "label": { "cs": "kosmo medvěd", "en": "space bear" } },
+    { "id": "cat", "type": "asset", "value": "cat", "label": { "cs": "kosmo kočka", "en": "space cat" } }
+  ],
+  "assetRefs": ["rocket", "moon", "star", "bubble", "bear", "cat"],
+  "soundPack": ["whoosh", "chirp", "pluck", "celebrate"],
+  "particleStyle": "comets",
+  "specialKeys": {
+    "Space": { "reaction": "rocket", "sound": "whoosh", "intensity": 1.55, "itemId": "rocket" },
+    "Enter": { "reaction": "burst", "sound": "celebrate", "intensity": 1.3, "itemId": "planet" },
+    "Backspace": { "reaction": "wave", "sound": "bubble", "intensity": 1.1, "itemId": "moon" },
+    "ArrowUp": { "reaction": "rocket", "sound": "whoosh", "intensity": 1.35, "itemId": "comet" }
+  },
+  "labels": {
+    "cta": { "cs": "Kosmický start!", "en": "Cosmic launch!" },
+    "playHint": { "cs": "Každá klávesa vypouští hvězdy.", "en": "Every key launches stars." },
+    "parentHint": { "cs": "Skrytý panel je v rohu", "en": "Hidden panel lives in the corner" },
+    "idleLabel": { "cs": "Galaxie jemně pluje.", "en": "The galaxy drifts softly." },
+    "comboLabel": { "cs": "Mega start!", "en": "Mega launch!" }
+  },
+  "defaults": {
+    "volume": 0.6,
+    "intensity": 1.1,
+    "fadeMs": 1600,
+    "reduceMotion": false,
+    "idleMode": true
+  }
+}

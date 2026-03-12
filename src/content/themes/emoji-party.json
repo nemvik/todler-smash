@@ -1,0 +1,73 @@
+{
+  "id": "emoji-party",
+  "name": { "cs": "Emoji párty", "en": "Emoji Party" },
+  "description": {
+    "cs": "Úsměvy, hvězdičky a měkké konfety.",
+    "en": "Smiles, stars, and soft confetti."
+  },
+  "icon": "🥳",
+  "palette": {
+    "base": "#ffe2ec",
+    "baseAlt": "#ffd0f5",
+    "surface": "#fff8fd",
+    "surfaceAlt": "#fff0fa",
+    "ink": "#4a2f54",
+    "outline": "#4a2f54",
+    "accent": "#ff8570",
+    "accent2": "#6fd7ff",
+    "accent3": "#ffd65b",
+    "glow": "#fff8c2",
+    "shadow": "#d299b8"
+  },
+  "background": {
+    "style": "confetti",
+    "gradient": ["#ffdcec", "#ffd0bc"],
+    "accentGradient": ["#fff4ff", "#ffebbb"],
+    "patternOpacity": 0.26
+  },
+  "items": [
+    { "id": "smile", "type": "emoji", "value": "😊", "label": { "cs": "úsměv", "en": "smile" } },
+    { "id": "party", "type": "emoji", "value": "🥳", "label": { "cs": "párty", "en": "party" } },
+    { "id": "heart", "type": "emoji", "value": "💛", "label": { "cs": "srdce", "en": "heart" } },
+    { "id": "rainbow", "type": "emoji", "value": "🌈", "label": { "cs": "duha", "en": "rainbow" } },
+    { "id": "sparkles", "type": "emoji", "value": "✨", "label": { "cs": "třpytky", "en": "sparkles" } },
+    { "id": "flower", "type": "emoji", "value": "🌸", "label": { "cs": "květ", "en": "flower" } },
+    { "id": "gift", "type": "emoji", "value": "🎁", "label": { "cs": "dárek", "en": "gift" } },
+    { "id": "music", "type": "emoji", "value": "🎶", "label": { "cs": "hudba", "en": "music" } },
+    { "id": "balloon", "type": "emoji", "value": "🎈", "label": { "cs": "balonek", "en": "balloon" } },
+    { "id": "icecream", "type": "emoji", "value": "🍦", "label": { "cs": "zmrzlina", "en": "ice cream" } },
+    { "id": "cookie", "type": "emoji", "value": "🍪", "label": { "cs": "sušenka", "en": "cookie" } },
+    { "id": "sun", "type": "emoji", "value": "🌞", "label": { "cs": "slunce", "en": "sun" } },
+    { "id": "star", "type": "asset", "value": "star", "label": { "cs": "hvězda", "en": "star" } },
+    { "id": "bubble", "type": "asset", "value": "bubble", "label": { "cs": "bublina", "en": "bubble" } },
+    { "id": "rocket", "type": "asset", "value": "rocket", "label": { "cs": "raketa", "en": "rocket" } },
+    { "id": "moon", "type": "asset", "value": "moon", "label": { "cs": "měsíček", "en": "moon" } },
+    { "id": "cat", "type": "asset", "value": "cat", "label": { "cs": "kočička", "en": "kitty" } },
+    { "id": "bear", "type": "asset", "value": "bear", "label": { "cs": "medvídek", "en": "bear" } },
+    { "id": "duck", "type": "asset", "value": "duck", "label": { "cs": "kachnička", "en": "duck" } },
+    { "id": "fish", "type": "asset", "value": "fish", "label": { "cs": "rybka", "en": "fish" } }
+  ],
+  "assetRefs": ["star", "bubble", "rocket", "moon", "cat", "bear", "duck", "fish"],
+  "soundPack": ["celebrate", "bloop", "bubble", "pluck"],
+  "particleStyle": "confetti",
+  "specialKeys": {
+    "Space": { "reaction": "burst", "sound": "celebrate", "intensity": 1.55, "itemId": "party" },
+    "Enter": { "reaction": "stomp", "sound": "pluck", "intensity": 1.25, "itemId": "gift" },
+    "Backspace": { "reaction": "wave", "sound": "bubble", "intensity": 1.1, "itemId": "bubble" },
+    "ArrowLeft": { "reaction": "rocket", "sound": "whoosh", "intensity": 1.3, "itemId": "rainbow" }
+  },
+  "labels": {
+    "cta": { "cs": "Párty start!", "en": "Party start!" },
+    "playHint": { "cs": "Každé klepnutí rozhází emoji.", "en": "Every tap tosses emoji." },
+    "parentHint": { "cs": "parent otevře panel", "en": "type parent to open the panel" },
+    "idleLabel": { "cs": "Konfety si tiše poletují.", "en": "Confetti drifts softly." },
+    "comboLabel": { "cs": "Emoji párty!", "en": "Emoji party!" }
+  },
+  "defaults": {
+    "volume": 0.62,
+    "intensity": 1.08,
+    "fadeMs": 1650,
+    "reduceMotion": false,
+    "idleMode": true
+  }
+}

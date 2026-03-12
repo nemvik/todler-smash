@@ -1,0 +1,73 @@
+{
+  "id": "animals",
+  "name": { "cs": "Zvířátka", "en": "Animals" },
+  "description": {
+    "cs": "Tlapky, čumáčky a měkké obláčky.",
+    "en": "Paws, noses, and soft cloud puffs."
+  },
+  "icon": "🐻",
+  "palette": {
+    "base": "#dff8e7",
+    "baseAlt": "#b8ebc7",
+    "surface": "#f4fff7",
+    "surfaceAlt": "#e8fbe3",
+    "ink": "#244437",
+    "outline": "#244437",
+    "accent": "#ffae6b",
+    "accent2": "#63d0c1",
+    "accent3": "#8ec86d",
+    "glow": "#fff5c4",
+    "shadow": "#87b097"
+  },
+  "background": {
+    "style": "clouds",
+    "gradient": ["#dff7c4", "#c6f2d5"],
+    "accentGradient": ["#f8ffdf", "#c0f4ff"],
+    "patternOpacity": 0.18
+  },
+  "items": [
+    { "id": "bear", "type": "asset", "value": "bear", "label": { "cs": "medvěd", "en": "bear" } },
+    { "id": "cat", "type": "asset", "value": "cat", "label": { "cs": "kočka", "en": "cat" } },
+    { "id": "duck", "type": "asset", "value": "duck", "label": { "cs": "kachna", "en": "duck" } },
+    { "id": "whale", "type": "asset", "value": "whale", "label": { "cs": "velryba", "en": "whale" } },
+    { "id": "fish", "type": "asset", "value": "fish", "label": { "cs": "ryba", "en": "fish" } },
+    { "id": "dog", "type": "emoji", "value": "🐶", "label": { "cs": "pes", "en": "dog" } },
+    { "id": "fox", "type": "emoji", "value": "🦊", "label": { "cs": "lišák", "en": "fox" } },
+    { "id": "koala", "type": "emoji", "value": "🐨", "label": { "cs": "koala", "en": "koala" } },
+    { "id": "frog", "type": "emoji", "value": "🐸", "label": { "cs": "žabka", "en": "frog" } },
+    { "id": "rabbit", "type": "emoji", "value": "🐰", "label": { "cs": "králík", "en": "rabbit" } },
+    { "id": "chick", "type": "emoji", "value": "🐥", "label": { "cs": "kuřátko", "en": "chick" } },
+    { "id": "bird", "type": "emoji", "value": "🐦", "label": { "cs": "ptáček", "en": "bird" } },
+    { "id": "ladybug", "type": "emoji", "value": "🐞", "label": { "cs": "beruška", "en": "ladybug" } },
+    { "id": "paw", "type": "emoji", "value": "🐾", "label": { "cs": "tlapky", "en": "paw" } },
+    { "id": "leaf", "type": "emoji", "value": "🍃", "label": { "cs": "lístek", "en": "leaf" } },
+    { "id": "flower", "type": "emoji", "value": "🌼", "label": { "cs": "kytička", "en": "flower" } },
+    { "id": "nest", "type": "emoji", "value": "🪺", "label": { "cs": "hnízdo", "en": "nest" } },
+    { "id": "bone", "type": "emoji", "value": "🦴", "label": { "cs": "kost", "en": "bone" } },
+    { "id": "star", "type": "asset", "value": "star", "label": { "cs": "lesní hvězda", "en": "forest star" } },
+    { "id": "bubble", "type": "asset", "value": "bubble", "label": { "cs": "rosná kapka", "en": "dew bubble" } }
+  ],
+  "assetRefs": ["bear", "cat", "duck", "whale", "fish", "star", "bubble"],
+  "soundPack": ["chirp", "bubble", "pluck", "bloop"],
+  "particleStyle": "confetti",
+  "specialKeys": {
+    "Space": { "reaction": "burst", "sound": "celebrate", "intensity": 1.4, "itemId": "bear" },
+    "Enter": { "reaction": "stomp", "sound": "pluck", "intensity": 1.2, "itemId": "paw" },
+    "Backspace": { "reaction": "wave", "sound": "bubble", "intensity": 1.1, "itemId": "bubble" },
+    "ArrowRight": { "reaction": "rocket", "sound": "whoosh", "intensity": 1.25, "itemId": "bird" }
+  },
+  "labels": {
+    "cta": { "cs": "Zvířecí hop!", "en": "Animal hop!" },
+    "playHint": { "cs": "Každá klávesa přiběhne jako zvířátko.", "en": "Each key bounds in like an animal." },
+    "parentHint": { "cs": "Dlouhý dotek v rohu", "en": "Long press the corner" },
+    "idleLabel": { "cs": "Louka si jen šumí.", "en": "The meadow hums softly." },
+    "comboLabel": { "cs": "Tlapkové kombo!", "en": "Paw combo!" }
+  },
+  "defaults": {
+    "volume": 0.52,
+    "intensity": 0.95,
+    "fadeMs": 1800,
+    "reduceMotion": false,
+    "idleMode": true
+  }
+}

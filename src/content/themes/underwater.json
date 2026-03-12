@@ -1,0 +1,73 @@
+{
+  "id": "underwater",
+  "name": { "cs": "Pod vodou", "en": "Underwater" },
+  "description": {
+    "cs": "Bubliny, rybky a měkké vlnky.",
+    "en": "Bubbles, fish, and gentle waves."
+  },
+  "icon": "🐠",
+  "palette": {
+    "base": "#9ce2ff",
+    "baseAlt": "#70c9f2",
+    "surface": "#d8f6ff",
+    "surfaceAlt": "#b7eeff",
+    "ink": "#0d3c56",
+    "outline": "#0d3c56",
+    "accent": "#ff9d6c",
+    "accent2": "#4ecfe0",
+    "accent3": "#8ddf99",
+    "glow": "#f4ffff",
+    "shadow": "#3f8bb2"
+  },
+  "background": {
+    "style": "waves",
+    "gradient": ["#9de6ff", "#64b7ec"],
+    "accentGradient": ["#cff8ff", "#9fd2ff"],
+    "patternOpacity": 0.24
+  },
+  "items": [
+    { "id": "bubble", "type": "asset", "value": "bubble", "label": { "cs": "bublina", "en": "bubble" } },
+    { "id": "fish", "type": "asset", "value": "fish", "label": { "cs": "rybka", "en": "fish" } },
+    { "id": "whale", "type": "asset", "value": "whale", "label": { "cs": "velryba", "en": "whale" } },
+    { "id": "shell", "type": "asset", "value": "shell", "label": { "cs": "mušle", "en": "shell" } },
+    { "id": "star", "type": "asset", "value": "star", "label": { "cs": "mořská hvězda", "en": "starfish" } },
+    { "id": "coral", "type": "emoji", "value": "🪸", "label": { "cs": "korál", "en": "coral" } },
+    { "id": "octopus", "type": "emoji", "value": "🐙", "label": { "cs": "chobotnice", "en": "octopus" } },
+    { "id": "dolphin", "type": "emoji", "value": "🐬", "label": { "cs": "delfín", "en": "dolphin" } },
+    { "id": "shrimp", "type": "emoji", "value": "🦐", "label": { "cs": "kreveta", "en": "shrimp" } },
+    { "id": "crab", "type": "emoji", "value": "🦀", "label": { "cs": "krab", "en": "crab" } },
+    { "id": "seal", "type": "emoji", "value": "🦭", "label": { "cs": "tuleň", "en": "seal" } },
+    { "id": "wave", "type": "emoji", "value": "🌊", "label": { "cs": "vlna", "en": "wave" } },
+    { "id": "pearl", "type": "emoji", "value": "🫧", "label": { "cs": "perla", "en": "pearl" } },
+    { "id": "star2", "type": "emoji", "value": "⭐", "label": { "cs": "hvězda", "en": "star" } },
+    { "id": "shell2", "type": "emoji", "value": "🐚", "label": { "cs": "ulita", "en": "shell" } },
+    { "id": "seaweed", "type": "emoji", "value": "🌿", "label": { "cs": "mořská tráva", "en": "seaweed" } },
+    { "id": "drop", "type": "emoji", "value": "💧", "label": { "cs": "kapka", "en": "drop" } },
+    { "id": "rocket", "type": "asset", "value": "rocket", "label": { "cs": "ponorka raketa", "en": "sub rocket" } },
+    { "id": "duck", "type": "asset", "value": "duck", "label": { "cs": "kachna", "en": "duck" } },
+    { "id": "moon", "type": "asset", "value": "moon", "label": { "cs": "měsíční mušle", "en": "moon shell" } }
+  ],
+  "assetRefs": ["bubble", "fish", "whale", "shell", "star", "rocket", "duck", "moon"],
+  "soundPack": ["bubble", "chirp", "bloop", "pluck"],
+  "particleStyle": "bubbles",
+  "specialKeys": {
+    "Space": { "reaction": "splash", "sound": "bubble", "intensity": 1.5, "itemId": "bubble" },
+    "Enter": { "reaction": "burst", "sound": "celebrate", "intensity": 1.25, "itemId": "whale" },
+    "Backspace": { "reaction": "wave", "sound": "bubble", "intensity": 1.15, "itemId": "wave" },
+    "ArrowDown": { "reaction": "rocket", "sound": "whoosh", "intensity": 1.25, "itemId": "fish" }
+  },
+  "labels": {
+    "cta": { "cs": "Bublinkové šplouch!", "en": "Bubble splash!" },
+    "playHint": { "cs": "Pohyby kreslí vodní stopu.", "en": "Movement paints a watery trail." },
+    "parentHint": { "cs": "Panel je schovaný", "en": "The panel is hidden" },
+    "idleLabel": { "cs": "Moře jemně dýchá.", "en": "The sea breathes softly." },
+    "comboLabel": { "cs": "Bublinkové kombo!", "en": "Bubble combo!" }
+  },
+  "defaults": {
+    "volume": 0.5,
+    "intensity": 0.95,
+    "fadeMs": 1850,
+    "reduceMotion": false,
+    "idleMode": true
+  }
+}

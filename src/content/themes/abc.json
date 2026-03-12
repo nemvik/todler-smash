@@ -1,0 +1,73 @@
+{
+  "id": "abc",
+  "name": { "cs": "Písmenka", "en": "ABC" },
+  "description": {
+    "cs": "Měkké kostky, pastelky a veselá písmena.",
+    "en": "Soft blocks, crayons, and cheerful letters."
+  },
+  "icon": "🔤",
+  "palette": {
+    "base": "#fef3c6",
+    "baseAlt": "#ffdcb5",
+    "surface": "#fffaf0",
+    "surfaceAlt": "#fff1cf",
+    "ink": "#27405c",
+    "outline": "#27405c",
+    "accent": "#ff8a66",
+    "accent2": "#55c2ff",
+    "accent3": "#7cd992",
+    "glow": "#fff5a5",
+    "shadow": "#d6935e"
+  },
+  "background": {
+    "style": "dots",
+    "gradient": ["#ffeab4", "#ffcba8"],
+    "accentGradient": ["#fff8df", "#ffd1a1"],
+    "patternOpacity": 0.2
+  },
+  "items": [
+    { "id": "apple", "type": "emoji", "value": "🍎", "label": { "cs": "jablko", "en": "apple" } },
+    { "id": "balloon", "type": "emoji", "value": "🎈", "label": { "cs": "balonek", "en": "balloon" } },
+    { "id": "book", "type": "emoji", "value": "📘", "label": { "cs": "knížka", "en": "book" } },
+    { "id": "crayon", "type": "emoji", "value": "🖍️", "label": { "cs": "pastelka", "en": "crayon" } },
+    { "id": "pencil", "type": "emoji", "value": "✏️", "label": { "cs": "tužka", "en": "pencil" } },
+    { "id": "paint", "type": "emoji", "value": "🎨", "label": { "cs": "barvy", "en": "paint" } },
+    { "id": "chalk", "type": "emoji", "value": "🧽", "label": { "cs": "tabule", "en": "chalk board" } },
+    { "id": "teddy", "type": "emoji", "value": "🧸", "label": { "cs": "medvídek", "en": "teddy" } },
+    { "id": "kite", "type": "emoji", "value": "🪁", "label": { "cs": "drak", "en": "kite" } },
+    { "id": "train", "type": "emoji", "value": "🚂", "label": { "cs": "vláček", "en": "train" } },
+    { "id": "abc-a", "type": "asset", "value": "block-a", "label": { "cs": "kostka A", "en": "block A" } },
+    { "id": "abc-1", "type": "asset", "value": "block-one", "label": { "cs": "kostka 1", "en": "block 1" } },
+    { "id": "spark-star", "type": "asset", "value": "star", "label": { "cs": "hvězdička", "en": "star" } },
+    { "id": "cat", "type": "asset", "value": "cat", "label": { "cs": "kočka", "en": "cat" } },
+    { "id": "bear", "type": "asset", "value": "bear", "label": { "cs": "medvěd", "en": "bear" } },
+    { "id": "duck", "type": "asset", "value": "duck", "label": { "cs": "kachna", "en": "duck" } },
+    { "id": "bubbles", "type": "asset", "value": "bubble", "label": { "cs": "bublina", "en": "bubble" } },
+    { "id": "rocket", "type": "asset", "value": "rocket", "label": { "cs": "raketa", "en": "rocket" } },
+    { "id": "music", "type": "emoji", "value": "🎵", "label": { "cs": "notička", "en": "note" } },
+    { "id": "sun", "type": "emoji", "value": "🌞", "label": { "cs": "sluníčko", "en": "sun" } }
+  ],
+  "assetRefs": ["block-a", "block-one", "star", "cat", "bear", "duck", "bubble", "rocket"],
+  "soundPack": ["bloop", "pluck", "chirp", "bubble"],
+  "particleStyle": "letters",
+  "specialKeys": {
+    "Space": { "reaction": "burst", "sound": "celebrate", "intensity": 1.45, "itemId": "abc-a" },
+    "Enter": { "reaction": "stomp", "sound": "pluck", "intensity": 1.25, "itemId": "abc-1" },
+    "Backspace": { "reaction": "wave", "sound": "bubble", "intensity": 1.15, "itemId": "crayon" },
+    "ArrowUp": { "reaction": "rocket", "sound": "whoosh", "intensity": 1.35, "itemId": "rocket" }
+  },
+  "labels": {
+    "cta": { "cs": "Písmenkové bouchnutí", "en": "Letter smash" },
+    "playHint": { "cs": "Každá klávesa kreslí písmenka.", "en": "Every key paints letters." },
+    "parentHint": { "cs": "Roh nahoře vlevo nebo parent", "en": "Top-left corner or type parent" },
+    "idleLabel": { "cs": "Písmenka si jen tak plují.", "en": "Letters drift quietly." },
+    "comboLabel": { "cs": "Bác kombo!", "en": "Smash combo!" }
+  },
+  "defaults": {
+    "volume": 0.58,
+    "intensity": 1,
+    "fadeMs": 1700,
+    "reduceMotion": false,
+    "idleMode": true
+  }
+}

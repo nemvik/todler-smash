@@ -1,0 +1,91 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 32px;
+  padding: 1.4rem 1.6rem;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 20px 42px rgba(18, 34, 68, 0.12);
+}
+
+.header h1,
+.header p {
+  margin: 0;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.header p {
+  color: rgba(39, 63, 92, 0.75);
+}
+
+.eyebrow {
+  margin-bottom: 0.35rem !important;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.sidebar,
+.main {
+  min-width: 0;
+}
+
+.jsonArea {
+  min-height: 360px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pinRow {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pinRow > :first-child {
+  flex: 1;
+}
+
+.status {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(39, 63, 92, 0.78);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pinRow {
+    flex-direction: column;
+  }
+}
