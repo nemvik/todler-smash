@@ -10,3 +10,4 @@ Original prompt: Create a fullscreen toddler-safe keyboard / mouse / touch smash
 - Added a dedicated `burstCount` parent setting to control how many symbols spawn per press.
 - Tightened the `parent` keyboard sequence so it immediately opens the parent panel instead of also treating the final key as a play interaction.
 - Added a custom SVG favicon with a playful bubble-style `B` mark and wired it into `index.html`.
+- Reworked animated backgrounds into theme-specific decorative layers: floating letters for ABC, drifting clouds/leaves for animals, rising bubbles for underwater, drifting stars/comets for space, and gentle confetti sparks for emoji party.

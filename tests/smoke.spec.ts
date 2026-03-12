@@ -39,9 +39,14 @@ test("main play flow unlocks fullscreen/audio and reacts to input", async ({
   });
 
   await page.goto("/");
+  await page.getByRole("button", { name: /Vesmír/i }).click();
   await page.getByRole("button", { name: "Spustit hraní" }).click();
 
   await expect(page).toHaveURL(/\/play$/);
+  await expect(page.getByTestId("background-motion")).toHaveAttribute(
+    "data-motion-style",
+    "stars",
+  );
 
   const fullscreenAttempts = await page.evaluate(
     () => (window as typeof window & { __fullscreenRequests?: number }).__fullscreenRequests,
@@ -69,6 +74,7 @@ test("main play flow unlocks fullscreen/audio and reacts to input", async ({
 
   await page.getByRole("switch", { name: "Omezený pohyb" }).click();
   await page.getByRole("button", { name: "Zavřít" }).click();
+  await expect(page.getByTestId("background-motion")).toHaveCount(0);
 
   await page.mouse.click(320, 240);
   const reducedSnapshot = await page.evaluate(() =>

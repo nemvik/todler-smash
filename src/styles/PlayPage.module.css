@@ -100,6 +100,144 @@
   animation: accentFloat 22s ease-in-out infinite alternate;
 }
 
+.motionLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.motionSprite {
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  opacity: var(--opacity);
+  will-change: transform, opacity;
+  filter: saturate(1.02);
+}
+
+.motionGlyph {
+  display: block;
+  line-height: 1;
+}
+
+.letter {
+  color: color-mix(in srgb, var(--theme-surface) 86%, white);
+  font-size: var(--size);
+  font-weight: 800;
+  text-shadow: 0 6px 18px rgba(18, 34, 68, 0.1);
+  animation: letterGlide var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.cloud {
+  width: calc(var(--size) * 1.55);
+  height: calc(var(--size) * 0.8);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 8px 22px rgba(36, 68, 55, 0.08);
+  animation: cloudCruise var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  bottom: 26%;
+  border-radius: 999px;
+  background: inherit;
+}
+
+.cloud::before {
+  left: 16%;
+  width: 34%;
+  height: 78%;
+}
+
+.cloud::after {
+  right: 14%;
+  width: 40%;
+  height: 92%;
+}
+
+.leaf {
+  width: calc(var(--size) * 0.72);
+  height: var(--size);
+  border-radius: 100% 0 100% 0;
+  background: color-mix(in srgb, var(--theme-accent-3) 70%, white);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.24),
+    0 6px 16px rgba(36, 68, 55, 0.08);
+  animation: leafDrift var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.leaf::after {
+  content: "";
+  position: absolute;
+  left: 48%;
+  top: 8%;
+  width: 2px;
+  height: 84%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(12deg);
+}
+
+.bubble {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.44);
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.5) 0 10%, rgba(255, 255, 255, 0.08) 18%, transparent 58%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 10px 24px rgba(13, 60, 86, 0.08);
+  animation: bubbleRise var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.star,
+.spark {
+  color: var(--theme-glow);
+  font-size: var(--size);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.16);
+}
+
+.star {
+  animation: starDrift var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.spark {
+  animation: sparkleFloat var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.comet {
+  width: calc(var(--size) * 1.6);
+  height: calc(var(--size) * 0.18);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, color-mix(in srgb, var(--theme-glow) 84%, white) 100%);
+  transform-origin: center;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--theme-glow) 45%, transparent);
+  animation: cometCruise var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.confetti {
+  width: calc(var(--size) * 0.34);
+  height: var(--size);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--theme-accent), var(--theme-accent-2));
+  box-shadow: 0 8px 18px rgba(18, 34, 68, 0.08);
+  animation: confettiDance var(--duration) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
 .canvas {
   position: absolute;
   inset: 0;
@@ -162,12 +300,39 @@
   }
 }
 
+@keyframes letterGlide {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(3deg);
+  }
+}
+
 @keyframes cloudDrift {
   0% {
     transform: translate3d(-1.5%, 0.6%, 0) scale(1);
   }
   100% {
     transform: translate3d(1.5%, -0.8%, 0) scale(1.03);
+  }
+}
+
+@keyframes cloudCruise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) scale(1.04);
+  }
+}
+
+@keyframes leafDrift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-14deg);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(14deg);
   }
 }
 
@@ -189,6 +354,20 @@
   }
 }
 
+@keyframes bubbleRise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.92);
+    opacity: var(--opacity-soft);
+  }
+  50% {
+    opacity: var(--opacity);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--travel-y), 0) scale(1.08);
+    opacity: var(--opacity-fade);
+  }
+}
+
 @keyframes starFloat {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -200,12 +379,52 @@
   }
 }
 
+@keyframes starDrift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: var(--opacity-soft);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(16deg);
+    opacity: var(--opacity);
+  }
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.9);
+    opacity: var(--opacity-soft);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) scale(1.08);
+    opacity: var(--opacity);
+  }
+}
+
+@keyframes cometCruise {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-12deg) scaleX(0.92);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(8deg) scaleX(1.08);
+  }
+}
+
 @keyframes confettiDrift {
   0% {
     transform: translate3d(-1.4%, 0.8%, 0) rotate(-0.6deg);
   }
   100% {
     transform: translate3d(1.2%, -0.9%, 0) rotate(0.6deg);
+  }
+}
+
+@keyframes confettiDance {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-10deg);
+  }
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(12deg);
   }
 }
 
