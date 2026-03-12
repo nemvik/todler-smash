@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { siteConfig } from "../src/config/site";
+
 test("main play flow unlocks fullscreen/audio and reacts to input", async ({
   page,
 }) => {
@@ -39,10 +41,25 @@ test("main play flow unlocks fullscreen/audio and reacts to input", async ({
   });
 
   await page.goto("/");
+  await expect(
+    page.getByRole("link", { name: siteConfig.supportLabelCs }),
+  ).toBeVisible();
+  await expect(page.getByText(siteConfig.supportNoteCs)).toBeVisible();
+
+  await page.getByRole("button", { name: "English" }).click();
+  await expect(
+    page.getByRole("link", { name: siteConfig.supportLabelEn }),
+  ).toBeVisible();
+  await expect(page.getByText(siteConfig.supportNoteEn)).toBeVisible();
+
+  await page.getByRole("button", { name: "Čeština" }).click();
   await page.getByRole("button", { name: /Vesmír/i }).click();
   await page.getByRole("button", { name: "Spustit hraní" }).click();
 
   await expect(page).toHaveURL(/\/play$/);
+  await expect(
+    page.getByRole("link", { name: siteConfig.supportLabelCs }),
+  ).toHaveCount(0);
   await expect(page.getByTestId("background-motion")).toHaveAttribute(
     "data-motion-style",
     "stars",
@@ -72,8 +89,26 @@ test("main play flow unlocks fullscreen/audio and reacts to input", async ({
   await page.keyboard.type("parent");
   await expect(page.getByText("Rodičovské ovládání")).toBeVisible();
 
+  const supportLink = page.getByRole("link", {
+    name: siteConfig.supportLabelCs,
+  });
+  await expect(supportLink).toBeVisible();
+  await expect(supportLink).toHaveAttribute("href", siteConfig.supportUrl);
+  await expect(supportLink).toHaveAttribute("target", "_blank");
+  await expect(supportLink).toHaveAttribute("rel", "noopener noreferrer");
+
+  const [popup] = await Promise.all([
+    page.waitForEvent("popup"),
+    supportLink.click(),
+  ]);
+  await expect(page).toHaveURL(/\/play$/);
+  await popup.close();
+
   await page.getByRole("switch", { name: "Omezený pohyb" }).click();
   await page.getByRole("button", { name: "Zavřít" }).click();
+  await expect(
+    page.getByRole("link", { name: siteConfig.supportLabelCs }),
+  ).toHaveCount(0);
   await expect(page.getByTestId("background-motion")).toHaveCount(0);
 
   await page.mouse.click(320, 240);

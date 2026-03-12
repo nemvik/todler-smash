@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Home, MonitorCog, Rocket, Settings2, VolumeX } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { ParentSupportLink } from "@/components/shared/ParentSupportLink";
 import { ParentSettingsControls } from "@/components/shared/ParentSettingsControls";
 import { PlaySurface } from "@/components/shared/PlaySurface";
 import { Button } from "@/components/ui/button";
@@ -192,6 +193,10 @@ export function PlayPage() {
                   {copy.backHome}
                 </Button>
               </div>
+            </div>
+            <Separator />
+            <div className="rounded-[20px] border border-border/50 bg-white/45 p-4">
+              <ParentSupportLink language={settings.language} />
             </div>
           </div>
           <SheetFooter className="pt-6">

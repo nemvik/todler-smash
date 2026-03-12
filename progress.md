@@ -11,3 +11,7 @@ Original prompt: Create a fullscreen toddler-safe keyboard / mouse / touch smash
 - Tightened the `parent` keyboard sequence so it immediately opens the parent panel instead of also treating the final key as a play interaction.
 - Added a custom SVG favicon with a playful bubble-style `B` mark and wired it into `index.html`.
 - Reworked animated backgrounds into theme-specific decorative layers: floating letters for ABC, drifting clouds/leaves for animals, rising bubbles for underwater, drifting stars/comets for space, and gentle confetti sparks for emoji party.
+- Added `src/config/site.ts` plus a shared parent-only support block for a muted Buy Me a Coffee link on the landing page and inside the hidden parent sheet only.
+- Extended Playwright smoke coverage to verify Czech/English support copy, absence of support UI in active play mode, secure new-tab link attributes, and preserved play session after opening the support page.
+- Verified after the change: `npm run lint`, `npm test`, `npm run build`, `npm run test:e2e`.
+- Ran an additional local browser check against `vite` on `http://127.0.0.1:4173/` and confirmed the landing-page support block visually. Note: headless Playwright screenshots did not reliably capture the Radix sheet overlay even though locators confirmed the parent panel and support link were visible.

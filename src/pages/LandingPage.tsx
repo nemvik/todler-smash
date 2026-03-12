@@ -1,6 +1,7 @@
 import { Globe2, LockKeyhole, Sparkles, Volume2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { ParentSupportLink } from "@/components/shared/ParentSupportLink";
 import { Button } from "@/components/ui/button";
 import { useAppSession } from "@/providers/AppSessionProvider";
 import { ThemePreview } from "@/components/shared/ThemePreview";
@@ -56,6 +57,9 @@ export function LandingPage() {
             </button>
           </div>
           <p className={styles.fullscreenNotice}>{copy.fullscreenNotice}</p>
+          <div className={styles.parentZone}>
+            <ParentSupportLink language={settings.language} />
+          </div>
         </div>
 
         <div className={styles.heroArt} aria-hidden="true">
