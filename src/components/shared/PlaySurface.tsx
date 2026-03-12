@@ -131,7 +131,9 @@ export function PlaySurface({
   return (
     <div
       ref={containerRef}
-      className={`${styles.surface} ${styles[theme.background.style]}`}
+      className={`${styles.surface} ${styles[theme.background.style]} ${
+        settings.animatedBackground && !settings.reduceMotion ? styles.animated : ""
+      }`}
     >
       <div className={styles.surfaceGlow} />
       <canvas ref={canvasRef} className={styles.canvas} />

@@ -15,6 +15,7 @@ describe("storage", () => {
 
     expect(settings).toEqual(fallback);
     expect(settings.burstCount).toBe(2);
+    expect(settings.animatedBackground).toBe(true);
   });
 
   it("merges stored settings with the fallback shape", () => {

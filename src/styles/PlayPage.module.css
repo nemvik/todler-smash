@@ -32,11 +32,19 @@
   opacity: 0.9;
 }
 
+.animated .surfaceGlow {
+  animation: glowFloat 24s ease-in-out infinite alternate;
+}
+
 .clouds::before {
   background:
     radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.42) 0 7%, transparent 8%),
     radial-gradient(circle at 42% 14%, rgba(255, 255, 255, 0.28) 0 6%, transparent 7%),
     radial-gradient(circle at 76% 26%, rgba(255, 255, 255, 0.24) 0 7%, transparent 8%);
+}
+
+.animated.clouds::before {
+  animation: cloudDrift 32s ease-in-out infinite alternate;
 }
 
 .dots::before {
@@ -45,10 +53,18 @@
   opacity: 0.45;
 }
 
+.animated.dots::before {
+  animation: dotDrift 28s linear infinite;
+}
+
 .waves::before {
   background:
     radial-gradient(circle at 25% 125%, rgba(255, 255, 255, 0.25) 0 22%, transparent 23%),
     radial-gradient(circle at 70% 120%, rgba(255, 255, 255, 0.18) 0 20%, transparent 21%);
+}
+
+.animated.waves::before {
+  animation: waveSway 26s ease-in-out infinite alternate;
 }
 
 .stars::before {
@@ -60,16 +76,28 @@
     radial-gradient(circle at 67% 74%, rgba(255, 255, 255, 0.72) 0 2px, transparent 3px);
 }
 
+.animated.stars::before {
+  animation: starFloat 30s ease-in-out infinite alternate;
+}
+
 .confetti::before {
   background:
     linear-gradient(120deg, transparent 0 18%, rgba(255, 255, 255, 0.2) 18% 20%, transparent 20% 100%),
     linear-gradient(200deg, transparent 0 48%, rgba(255, 255, 255, 0.17) 48% 50%, transparent 50% 100%);
 }
 
+.animated.confetti::before {
+  animation: confettiDrift 29s ease-in-out infinite alternate;
+}
+
 .surface::after {
   background:
     radial-gradient(circle at 20% 78%, color-mix(in srgb, var(--theme-accent) 44%, transparent) 0, transparent 22%),
     radial-gradient(circle at 88% 72%, color-mix(in srgb, var(--theme-accent-2) 44%, transparent) 0, transparent 22%);
+}
+
+.animated.surface::after {
+  animation: accentFloat 22s ease-in-out infinite alternate;
 }
 
 .canvas {
@@ -123,10 +151,80 @@
   font-size: 0.92rem;
 }
 
+@keyframes glowFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.82;
+  }
+  100% {
+    transform: translate3d(1.8%, -1.2%, 0) scale(1.04);
+    opacity: 0.96;
+  }
+}
+
+@keyframes cloudDrift {
+  0% {
+    transform: translate3d(-1.5%, 0.6%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(1.5%, -0.8%, 0) scale(1.03);
+  }
+}
+
+@keyframes dotDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(24px, 12px, 0);
+  }
+}
+
+@keyframes waveSway {
+  0% {
+    transform: translate3d(-1.2%, 0.8%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(1.4%, -0.6%, 0) scale(1.02);
+  }
+}
+
+@keyframes starFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.78;
+  }
+  100% {
+    transform: translate3d(1.2%, -1.4%, 0) scale(1.03);
+    opacity: 0.92;
+  }
+}
+
+@keyframes confettiDrift {
+  0% {
+    transform: translate3d(-1.4%, 0.8%, 0) rotate(-0.6deg);
+  }
+  100% {
+    transform: translate3d(1.2%, -0.9%, 0) rotate(0.6deg);
+  }
+}
+
+@keyframes accentFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.86;
+  }
+  100% {
+    transform: translate3d(-1.6%, 1.2%, 0) scale(1.03);
+    opacity: 0.98;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .surfaceGlow,
   .surface::before,
   .surface::after {
+    animation: none !important;
     transition: none;
   }
 }

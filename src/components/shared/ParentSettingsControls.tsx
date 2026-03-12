@@ -18,6 +18,7 @@ interface ParentSettingsControlsProps {
     intensity: string;
     burstCount: string;
     fadeSpeed: string;
+    animatedBackground: string;
     reduceMotion: string;
     idleMode: string;
     fullscreen: string;
@@ -95,6 +96,13 @@ export function ParentSettingsControls({
           step={100}
           suffix="ms"
           onValueChange={(value) => onSettingsChange({ fadeMs: value })}
+        />
+        <SwitchRow
+          checked={settings.animatedBackground}
+          label={copy.animatedBackground}
+          onCheckedChange={(checked) =>
+            onSettingsChange({ animatedBackground: checked })
+          }
         />
 
         <SwitchRow

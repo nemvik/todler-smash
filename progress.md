@@ -9,3 +9,4 @@ Original prompt: Create a fullscreen toddler-safe keyboard / mouse / touch smash
 - Cleaned build workflow to avoid committing generated config `.js/.d.ts/.tsbuildinfo` artifacts.
 - Added a dedicated `burstCount` parent setting to control how many symbols spawn per press.
 - Tightened the `parent` keyboard sequence so it immediately opens the parent panel instead of also treating the final key as a play interaction.
+- Added a custom SVG favicon with a playful bubble-style `B` mark and wired it into `index.html`.

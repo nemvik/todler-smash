@@ -141,6 +141,7 @@ Parent config export:
 - Effect intensity
 - Symbols per press
 - Fade length
+- Gentle animated background
 - Reduced motion
 - Idle mode
 - Prefer fullscreen

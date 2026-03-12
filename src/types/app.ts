@@ -96,6 +96,7 @@ export interface ParentSettings {
   intensity: number;
   burstCount: number;
   fadeMs: number;
+  animatedBackground: boolean;
   reduceMotion: boolean;
   idleMode: boolean;
   preferFullscreen: boolean;

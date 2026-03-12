@@ -100,6 +100,7 @@ export function createDefaultSettings(theme: ThemePack, language: Language) {
     intensity: clamp(theme.defaults.intensity, 0.4, 1.8),
     burstCount: 2,
     fadeMs: clamp(theme.defaults.fadeMs, 1200, 2200),
+    animatedBackground: true,
     reduceMotion: theme.defaults.reduceMotion,
     idleMode: theme.defaults.idleMode,
     preferFullscreen: true,
